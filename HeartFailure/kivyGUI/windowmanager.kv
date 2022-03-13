@@ -1,0 +1,22 @@
+#:import FormWindow formwindow
+#:import FileUploadWindow fileuploadwindow
+#:import WelcomeWindow welcomewindow
+
+<WindowManager>
+    WelcomeScreen:
+    FormScreen:
+    FileUploadScreen:
+
+<WelcomeScreen@Screen>:
+    name : "WelcomeScreen"
+    WelcomeWindow:
+
+<FormScreen@Screen>:
+    name:"FormScreen"
+    FormWindow:
+
+<FileUploadScreen@Screen>:
+    name : "FileUploadScreen"
+    FileUploadWindow:
+
+

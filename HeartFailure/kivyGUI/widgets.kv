@@ -1,0 +1,62 @@
+<MyPopup>
+    auto_dismiss : True
+    size_hint : 0.6,0.3
+    pos_hint : {"center_x":.5,"center_y":.5}
+    background_color : (0,0,0,0)
+    canvas.before:
+        Color:
+            rgba: 0,0,1,0.8
+        RoundedRectangle:
+            size : self.size
+            pos : self.pos
+            radius : [0,40,0,40]
+    Label :
+        id : pop_output
+        text : ""
+
+<MyLabel>
+    size_hint : .80,.75
+    halign : "left"
+    valign : "middle"
+    font_size : 18
+    color : 1,1,1,1
+    canvas.before:
+        Color:
+            rgba : (.4,.5,.6,.7)
+        RoundedRectangle:
+            size : self.size
+            pos : self.pos
+            radius : [50,0,0,50]
+
+<MyTextInput>
+    halign : "center"
+    valign : "middle"
+    size_hint : 1.5,.75
+    multiline : False
+    background_color: 0,0,0,0
+    cursor_color: 1,1,1,1
+    foreground_color : 1,1,1,1
+    canvas.after:
+        Color:
+            rgba : .1,.2,.3,.5
+        RoundedRectangle:
+            size : self.size
+            pos : self.pos
+            radius : [0,50,50,0]
+
+<MyBoxLayout>
+    canvas.before:
+        Color:
+            rgba : (.1,.2,.3,.5)
+        RoundedRectangle:
+            size : self.size
+            pos : self.pos
+            radius : [0,50,50,0]
+    size_hint : 1.5,.75
+
+<RadioButton>
+    color: 1,1,1,1
+
+<RadioLabel>
+    color: 1,1,1,1
+

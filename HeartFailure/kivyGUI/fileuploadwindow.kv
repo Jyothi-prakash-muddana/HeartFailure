@@ -1,0 +1,130 @@
+<RecordLabel>:
+    color : 1,1,1,1
+    size_hint : (None,None)
+    height : 30
+    width : 130
+    bold : True
+
+<IndexLabel>:
+    color : 1,1,1,1
+    size_hint : (None,None)
+    height : 30
+    width :  40
+    bold : True
+
+<ProgressPopup>:
+    auto_dismiss : True
+    size_hint : 0.6,0.3
+    pos_hint : {"center_x":.5,"center_y":.5}
+    background_color : (0,0,0,0)
+    canvas.before:
+        Color:
+            rgba: 0,0,1,0.8
+        RoundedRectangle:
+            size : self.size
+            pos : self.pos
+            radius : [0,40,0,40]
+
+<IGridLayout>:
+    id : grid
+    cols : 13
+    size_hint : (None,None)
+    height : self.minimum_height
+    width : self.minimum_width
+
+<IndexBoxLayout>:
+    canvas.before:
+        Color :
+            rgba : (0,0,1,0.8)
+        Rectangle:
+            size : self.size
+            pos : self.pos
+    orientation : "vertical"
+    size_hint : (None,None)
+    height : self.minimum_height
+    width : self.minimum_width
+
+<HeadingBoxLayout>:
+    canvas.before:
+        Color :
+            rgba : (0,0,1,0.8)
+        Rectangle:
+            size : self.size
+            pos : self.pos
+    orientation : "horizontal"
+    id:heading
+    size_hint : (None,None)
+    height : self.minimum_height
+    width : self.minimum_width
+
+
+<FileUploadWindow>:
+    canvas.before:
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "Heading.jpg"
+    FloatLayout:
+        size : root.width,root.height
+        canvas.before:
+            Color :
+                rgba : (0,0,0,.7)
+            Rectangle:
+                size : self.size
+                pos : self.pos
+        TextInput:
+            id : location
+            font_size : 24
+            text : ""
+            size_hint : .7,.07
+            pos_hint:{"center_x":.5,"center_y":.07}
+            multiline : False
+            background_color: 0,0,0,.5
+            cursor_color: 1,1,1,1
+            foreground_color : 1,1,1,1
+        Button:
+            text : "Choose File"
+            size_hint : .15,.07
+            pos_hint :{"x":0,"center_y":.07}
+            background_color :0,.5,.9,1
+            on_release : root.choose_file()
+
+        Button :
+            text : "Back"
+            size_hint :.15,.07
+            pos_hint :{"x":.85,"center_y":.07}
+            background_color :0,.5,.9,1
+            on_release : app.root.current = "WelcomeScreen"
+
+        FloatLayout:
+            id : layout
+            size_hint : (1,.90)
+            pos_hint :{"x":0,"y":.1}
+            orientation : "vertical"
+            ScrollView:
+                id : heading
+                scroll : scroll
+                size_hint : (.95,.05)
+                pos_hint : {'x':.05,'y':0.95}
+                do_scroll_y : False
+                do_scroll_x : False
+                scroll_x : self.scroll.scroll_x
+
+            ScrollView:
+                id : index
+                scroll : scroll
+                size_hint : (.05,.95)
+                pos_hint : {'x':0,'y':0}
+                do_scroll_y : False
+                do_scroll_x : False
+                scroll_y : self.scroll.scroll_y
+
+
+            ScrollView:
+                size_hint : (.95,.95)
+                pos_hint :  {'x':.05,'y':0}
+                id : scroll
+                scroll_type : ["bars"]
+                bar_margin : 5
+                bar_width : 10
+

@@ -1,0 +1,17 @@
+Requirements
+
+https://www.jetbrains.com/edu-products/download/download-thanks-pce.html?platform=windows
+
+easygui                   0.98.2
+imblearn                  0.0
+jupyter                   1.0.0
+Kivy                      2.0.0
+numpy                     1.19.5
+pandas                    1.2.4
+pyinstaller               4.3
+seaborn                   0.11.1
+sklearn                   0.0
+xgboost                   1.4.1
+matplotlib
+
+https://jrsoftware.org/download.php/is.exe

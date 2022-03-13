@@ -1,0 +1,214 @@
+#:import all widgets
+<FormWindow>:
+    canvas.before:
+        Rectangle:
+            size : self.size
+            pos : self.pos
+            source : "Heading.jpg"
+
+    BoxLayout:
+        orientation : "vertical"
+        cols : 2
+        size : root.width,root.height
+        padding:10
+        canvas.before:
+            Color:
+                rgba: 0,0,0,0.7
+            Rectangle:
+                size : self.size
+                pos : self.pos
+#age
+        BoxLayout:
+            orientation:"horizontal"
+            MyLabel:
+                text : "Age"
+            MyTextInput :
+                id : age_input
+                size_hint : 1.5,.75
+                multiline : False
+
+#anaemia
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Anaemia"
+
+            MyBoxLayout:
+                RadioLabel :
+                    text : "Yes"
+                RadioButton:
+                    id : anaemia_yes
+                    group : "anaemia"
+                    on_active : root.radiobutton_anaemia(self,self.active,'1')
+                RadioLabel :
+                    text : "No"
+                RadioButton:
+                    id : anaemia_no
+                    group : "anaemia"
+                    on_active :  root.radiobutton_anaemia(self,self.active,'0')
+
+#creatinine_phosphokinase
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Creatinine Phosphokinase"
+            MyTextInput :
+                id:creatinine_phosphokinase_input
+
+#diabetes
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Diabetes"
+            MyBoxLayout:
+                RadioLabel :
+                    text : "Yes"
+                RadioButton:
+                    id : diabetes_yes
+                    group : "diabetes"
+                    on_active :  root.radiobutton_diabetes(self,self.active,'1')
+                RadioLabel :
+                    text : "No"
+                RadioButton:
+                    id : diabetes_no
+                    group : "diabetes"
+                    on_active : root.radiobutton_diabetes(self,self.active,'0')
+
+#ejection_fraction
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Ejection Fraction"
+            MyTextInput :
+                id:ejection_fraction_input
+
+#high_blood_pressure
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "High Blood Pressure"
+            MyBoxLayout:
+                size_hint : 1.5,.75
+                RadioLabel :
+                    text : "Yes"
+                RadioButton:
+                    id : high_blood_pressure_yes
+                    group : "high_blood_pressure"
+                    on_active : root.radiobutton_high_blood_pressure(self,self.active,'1')
+
+                RadioLabel :
+                    text : "No"
+                RadioButton:
+                    id : high_blood_pressure_no
+                    group : "high_blood_pressure"
+                    on_active : root.radiobutton_high_blood_pressure(self,self.active,'0')
+
+#platelets
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Platelets"
+            MyTextInput :
+                id:platelets_input
+
+#serum_creatinine
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Serum Creatinine"
+            MyTextInput :
+                id:serum_creatinine_input
+
+#serum_sodium
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Serum Sodium"
+            MyTextInput :
+                id:serum_sodium_input
+#gender
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Gender"
+            MyBoxLayout:
+                RadioLabel :
+                    text : "Female"
+                RadioButton:
+                    id : gender_female
+                    group : "gender"
+                    on_active : root.radiobutton_gender(self,self.active,'0')
+                RadioLabel :
+                    text : "Male"
+                RadioButton:
+                    id : gender_male
+                    group : "gender"
+                    on_active : root.radiobutton_gender(self,self.active,'1')
+#smoking
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Smoking"
+            MyBoxLayout:
+                RadioLabel :
+                    text : "Yes"
+                RadioButton:
+                    id : smoking_yes
+                    group : "smoking"
+                    on_active : root.radiobutton_smoking(self,self.active,'1')
+                RadioLabel :
+                    text : "No"
+                RadioButton:
+                    id : smoking_no
+                    group : "smoking"
+                    on_active : root.radiobutton_smoking(self,self.active,'0')
+#Time
+        BoxLayout:
+            orientaion:"horizontal"
+            MyLabel:
+                text : "Time"
+            MyTextInput :
+                id:time_input
+#Buttons
+        BoxLayout:
+            orientaion:"horizontal"
+            spacing : 2
+            Button:
+                text : "RESET"
+                background_color : (0,0,0,0)
+                size_hint : .9,.9
+                color : (.1,.1,.7,1)
+                canvas.before:
+                    Color:
+                        rgba : (.4,.5,.6,.9)
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [50,0,0,50]
+                on_press : root.reset()
+
+            Button:
+                text : "SUBMIT"
+                background_color : (0,0,0,0)
+                size_hint : .9,.9
+                color : (.7,.1,.1,1)
+                canvas.before:
+                    Color:
+                        rgba : (.4,.5,.6,1)
+                    Rectangle:
+                        size : self.size
+                        pos : self.pos
+                on_press : root.submit()
+            Button:
+                text : "Back"
+                background_color : (0,0,0,0)
+                size_hint : .9,.9
+                color : (.1,.1,.7,1)
+                canvas.before:
+                    Color:
+                        rgba : (.4,.5,.6,.9)
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [0,50,50,0]
+                on_press : app.root.current = "WelcomeScreen"
