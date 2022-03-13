@@ -14,7 +14,7 @@ As setup file is not cerfied it may raise a warning to install please accept it
 <a href="https://github.com/Jyothi-prakash-muddana/HeartFailure/tree/main/HeartFailure/kivyGUI"> kivy GUI code </a>
 
 ### jupyter notebook for machin learning model creation 
-<a href="https://github.com/Jyothi-prakash-muddana/HeartFailure/blob/main/HeartFailure/Documents/HeartFailureNotebook.html"> jupyter note book</a>
+<a href="https://github.com/Jyothi-prakash-muddana/HeartFailure/blob/main/HeartFailure/MachineLearning/HeartFailure.ipynb"> jupyter note book</a>
 
 
 
